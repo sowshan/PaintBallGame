@@ -2,7 +2,7 @@
 
 A fast-paced browser game — paintballs fly across the screen and you have to tap/click them before they escape. Survive as long as you can, build combos, and climb the leaderboard!
 
-🎮 **[Play it live](https://sowshan.github.io/PaintBallGame/)** ← replace with your GitHub Pages link after setup
+🎮 **[Play it live](https://sowshan.github.io/PaintBallGame/)** 
 
 ---
 
