@@ -434,16 +434,13 @@ function smashAt(px,py) {
         return;
       }
       if (b.type==='bomb_ball') {
-        // Explode all balls within 120px
+        // Explode EVERY ball currently on screen
         const ex=b.x, ey=b.y;
         balls.splice(i,1);
         makeSplat(ex,ey,b.color);
-        let chain=0;
-        balls = balls.filter(ob => {
-          const d2=Math.sqrt((ob.x-ex)**2+(ob.y-ey)**2);
-          if (d2<120){ makeSplat(ob.x,ob.y,ob.color); chain++; return false; }
-          return true;
-        });
+        const chain = balls.length;
+        balls.forEach(ob => makeSplat(ob.x,ob.y,ob.color));
+        balls = [];
         score += 3+(chain*2);
         document.getElementById('score-val').textContent=score;
         makeFloatText(ex,ey-40,'💥 BOOM! +'+(3+chain*2),'#FF8800');
